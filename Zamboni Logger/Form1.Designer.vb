@@ -27,13 +27,14 @@ Partial Class Form1
         Me.ApplicationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExportDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ResetBladeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Phantoms = New System.Windows.Forms.RadioButton()
         Me.BlackBear = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.op = New System.Windows.Forms.ComboBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.HeavyFlood = New System.Windows.Forms.RadioButton()
         Me.MediumFlood = New System.Windows.Forms.RadioButton()
@@ -65,7 +66,7 @@ Partial Class Form1
         '
         'ApplicationToolStripMenuItem
         '
-        Me.ApplicationToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExportDataToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.ApplicationToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExportDataToolStripMenuItem, Me.ExitToolStripMenuItem, Me.ResetBladeToolStripMenuItem})
         Me.ApplicationToolStripMenuItem.Name = "ApplicationToolStripMenuItem"
         Me.ApplicationToolStripMenuItem.Size = New System.Drawing.Size(100, 24)
         Me.ApplicationToolStripMenuItem.Text = "Application"
@@ -82,9 +83,14 @@ Partial Class Form1
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(171, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
+        'ResetBladeToolStripMenuItem
+        '
+        Me.ResetBladeToolStripMenuItem.Name = "ResetBladeToolStripMenuItem"
+        Me.ResetBladeToolStripMenuItem.Size = New System.Drawing.Size(171, 26)
+        Me.ResetBladeToolStripMenuItem.Text = "Reset Blade"
+        '
         'PictureBox1
         '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(262, 43)
         Me.PictureBox1.Name = "PictureBox1"
@@ -136,7 +142,7 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
+        Me.GroupBox2.Controls.Add(Me.op)
         Me.GroupBox2.Location = New System.Drawing.Point(128, 193)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(113, 76)
@@ -144,14 +150,14 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Operator"
         '
-        'ComboBox1
+        'op
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"J.T. McQuigg"})
-        Me.ComboBox1.Location = New System.Drawing.Point(6, 26)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(101, 28)
-        Me.ComboBox1.TabIndex = 0
+        Me.op.FormattingEnabled = True
+        Me.op.Items.AddRange(New Object() {"J.T. McQuigg", "Rouselle Ligon", "Joe Hoyer", "Jared Romanski", "Victor"})
+        Me.op.Location = New System.Drawing.Point(6, 26)
+        Me.op.Name = "op"
+        Me.op.Size = New System.Drawing.Size(101, 28)
+        Me.op.TabIndex = 0
         '
         'GroupBox3
         '
@@ -302,7 +308,7 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents op As ComboBox
     Friend WithEvents Phantoms As RadioButton
     Friend WithEvents BlackBear As RadioButton
     Friend WithEvents GroupBox3 As GroupBox
@@ -315,4 +321,5 @@ Partial Class Form1
     Friend WithEvents LightFlood As RadioButton
     Friend WithEvents Logs As Button
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents ResetBladeToolStripMenuItem As ToolStripMenuItem
 End Class

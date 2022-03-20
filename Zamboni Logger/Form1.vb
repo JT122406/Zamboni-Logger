@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports System.IO
+Imports System.Text
+Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -49,9 +51,9 @@
         End If
 
 
+        My.Computer.FileSystem.WriteAllText("C:\Users\JTMcQ\Testfile1.txt", "Rink: " + Rink + " | Operator: " + Me.op.Text + " | Flood Type: " + Flood + " | Cut Type: " + Cut + Environment.NewLine, True)
 
-
-
+        resetAllControls(Me)
 
 
     End Sub
@@ -98,5 +100,54 @@
 
     Private Sub BlackBear_CheckedChanged(sender As Object, e As EventArgs) Handles BlackBear.CheckedChanged
 
+    End Sub
+
+    Private Sub Logs_Click(sender As Object, e As EventArgs) Handles Logs.Click
+        File.Open("C:\Users\JTMcQ\Testfile1.txt", FileMode.Open)
+    End Sub
+    Private Sub resetAllControls(ByVal container As Control)
+        For Each ctrl As Control In container.Controls
+            If TypeOf ctrl Is RadioButton Then
+                DirectCast(ctrl, RadioButton).Checked = False
+            ElseIf TypeOf ctrl Is TextBox Then
+                DirectCast(ctrl, TextBox).Clear()
+            ElseIf TypeOf ctrl Is ComboBox Then
+                DirectCast(ctrl, ComboBox).SelectedIndex = -1
+            End If
+            If ctrl.Controls.Count > 0 Then
+                resetAllControls(ctrl)
+            End If
+        Next
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged_1(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        If RadioButton1.Checked Then
+            Label1.Text = "Battery Levels"
+            Label1.Visible = True
+            ComboBox1.Visible = True
+            ComboBox2.Visible = True
+        Else
+            Label1.Visible = False
+            ComboBox1.Visible = False
+            ComboBox2.Visible = False
+        End If
+
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged_1(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        If RadioButton2.Checked Then
+            Label1.Text = "Tank Info"
+            Label1.Visible = True
+            ComboBox1.Items.Clear()
+            ComboBox1.Items.Add("A")
+            ComboBox1.Items.Add("B")
+            ComboBox1.Visible = True
+            ComboBox2.Items.Clear()
+            ComboBox2.Visible = True
+        Else
+            Label1.Visible = False
+            ComboBox1.Visible = False
+            ComboBox2.Visible = False
+        End If
     End Sub
 End Class

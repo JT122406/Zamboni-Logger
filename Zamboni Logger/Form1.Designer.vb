@@ -45,6 +45,12 @@ Partial Class Form1
         Me.LightCut = New System.Windows.Forms.RadioButton()
         Me.Logs = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -52,6 +58,7 @@ Partial Class Form1
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -60,7 +67,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ApplicationToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(503, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(725, 28)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -92,7 +99,7 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(262, 43)
+        Me.PictureBox1.Location = New System.Drawing.Point(483, 43)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(213, 113)
         Me.PictureBox1.TabIndex = 1
@@ -100,9 +107,9 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 334)
+        Me.Button1.Location = New System.Drawing.Point(12, 418)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(482, 29)
+        Me.Button1.Size = New System.Drawing.Size(701, 29)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Submit Ice Cut"
         Me.Button1.UseVisualStyleBackColor = True
@@ -113,7 +120,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.BlackBear)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 193)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(99, 76)
+        Me.GroupBox1.Size = New System.Drawing.Size(99, 114)
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Rink"
@@ -121,7 +128,7 @@ Partial Class Form1
         'Phantoms
         '
         Me.Phantoms.AutoSize = True
-        Me.Phantoms.Location = New System.Drawing.Point(0, 52)
+        Me.Phantoms.Location = New System.Drawing.Point(-2, 56)
         Me.Phantoms.Name = "Phantoms"
         Me.Phantoms.Size = New System.Drawing.Size(95, 24)
         Me.Phantoms.TabIndex = 1
@@ -145,7 +152,7 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.op)
         Me.GroupBox2.Location = New System.Drawing.Point(128, 193)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(113, 76)
+        Me.GroupBox2.Size = New System.Drawing.Size(113, 114)
         Me.GroupBox2.TabIndex = 17
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Operator"
@@ -251,9 +258,9 @@ Partial Class Form1
         '
         'Logs
         '
-        Me.Logs.Location = New System.Drawing.Point(12, 299)
+        Me.Logs.Location = New System.Drawing.Point(12, 383)
         Me.Logs.Name = "Logs"
-        Me.Logs.Size = New System.Drawing.Size(223, 29)
+        Me.Logs.Size = New System.Drawing.Size(701, 29)
         Me.Logs.TabIndex = 20
         Me.Logs.Text = "View Logs"
         Me.Logs.UseVisualStyleBackColor = True
@@ -267,11 +274,78 @@ Partial Class Form1
         Me.PictureBox2.TabIndex = 21
         Me.PictureBox2.TabStop = False
         '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.ComboBox2)
+        Me.GroupBox5.Controls.Add(Me.ComboBox1)
+        Me.GroupBox5.Controls.Add(Me.Label1)
+        Me.GroupBox5.Controls.Add(Me.RadioButton2)
+        Me.GroupBox5.Controls.Add(Me.RadioButton1)
+        Me.GroupBox5.Location = New System.Drawing.Point(510, 193)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(186, 114)
+        Me.GroupBox5.TabIndex = 22
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Energy"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0"})
+        Me.ComboBox2.Location = New System.Drawing.Point(99, 78)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(78, 28)
+        Me.ComboBox2.TabIndex = 4
+        Me.ComboBox2.Visible = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0"})
+        Me.ComboBox1.Location = New System.Drawing.Point(15, 78)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(78, 28)
+        Me.ComboBox1.TabIndex = 3
+        Me.ComboBox1.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(40, 53)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(53, 20)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Label1"
+        Me.Label1.Visible = False
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(99, 26)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(83, 24)
+        Me.RadioButton2.TabIndex = 1
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "ProPane"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(15, 26)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(78, 24)
+        Me.RadioButton1.TabIndex = 0
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Electric"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(503, 387)
+        Me.ClientSize = New System.Drawing.Size(725, 459)
+        Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Logs)
         Me.Controls.Add(Me.GroupBox4)
@@ -295,6 +369,8 @@ Partial Class Form1
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -322,4 +398,10 @@ Partial Class Form1
     Friend WithEvents Logs As Button
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents ResetBladeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

@@ -36,10 +36,12 @@ Partial Class Form1
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.op = New System.Windows.Forms.ComboBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Noflood = New System.Windows.Forms.RadioButton()
         Me.HeavyFlood = New System.Windows.Forms.RadioButton()
         Me.MediumFlood = New System.Windows.Forms.RadioButton()
         Me.LightFlood = New System.Windows.Forms.RadioButton()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.NoCut = New System.Windows.Forms.RadioButton()
         Me.HeavyCut = New System.Windows.Forms.RadioButton()
         Me.MediumCut = New System.Windows.Forms.RadioButton()
         Me.LightCut = New System.Windows.Forms.RadioButton()
@@ -51,6 +53,8 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.PropaneCuts = New System.Windows.Forms.Label()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -59,6 +63,7 @@ Partial Class Form1
         Me.GroupBox4.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -128,7 +133,7 @@ Partial Class Form1
         'Phantoms
         '
         Me.Phantoms.AutoSize = True
-        Me.Phantoms.Location = New System.Drawing.Point(-2, 56)
+        Me.Phantoms.Location = New System.Drawing.Point(2, 56)
         Me.Phantoms.Name = "Phantoms"
         Me.Phantoms.Size = New System.Drawing.Size(95, 24)
         Me.Phantoms.TabIndex = 1
@@ -168,6 +173,7 @@ Partial Class Form1
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Noflood)
         Me.GroupBox3.Controls.Add(Me.HeavyFlood)
         Me.GroupBox3.Controls.Add(Me.MediumFlood)
         Me.GroupBox3.Controls.Add(Me.LightFlood)
@@ -178,10 +184,21 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Flood Type"
         '
+        'Noflood
+        '
+        Me.Noflood.AutoSize = True
+        Me.Noflood.Location = New System.Drawing.Point(6, 25)
+        Me.Noflood.Name = "Noflood"
+        Me.Noflood.Size = New System.Drawing.Size(92, 24)
+        Me.Noflood.TabIndex = 3
+        Me.Noflood.TabStop = True
+        Me.Noflood.Text = "No Flood"
+        Me.Noflood.UseVisualStyleBackColor = True
+        '
         'HeavyFlood
         '
         Me.HeavyFlood.AutoSize = True
-        Me.HeavyFlood.Location = New System.Drawing.Point(6, 83)
+        Me.HeavyFlood.Location = New System.Drawing.Point(6, 90)
         Me.HeavyFlood.Name = "HeavyFlood"
         Me.HeavyFlood.Size = New System.Drawing.Size(71, 24)
         Me.HeavyFlood.TabIndex = 2
@@ -192,7 +209,7 @@ Partial Class Form1
         'MediumFlood
         '
         Me.MediumFlood.AutoSize = True
-        Me.MediumFlood.Location = New System.Drawing.Point(6, 53)
+        Me.MediumFlood.Location = New System.Drawing.Point(6, 69)
         Me.MediumFlood.Name = "MediumFlood"
         Me.MediumFlood.Size = New System.Drawing.Size(85, 24)
         Me.MediumFlood.TabIndex = 1
@@ -203,7 +220,7 @@ Partial Class Form1
         'LightFlood
         '
         Me.LightFlood.AutoSize = True
-        Me.LightFlood.Location = New System.Drawing.Point(6, 23)
+        Me.LightFlood.Location = New System.Drawing.Point(6, 48)
         Me.LightFlood.Name = "LightFlood"
         Me.LightFlood.Size = New System.Drawing.Size(63, 24)
         Me.LightFlood.TabIndex = 0
@@ -213,6 +230,7 @@ Partial Class Form1
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.NoCut)
         Me.GroupBox4.Controls.Add(Me.HeavyCut)
         Me.GroupBox4.Controls.Add(Me.MediumCut)
         Me.GroupBox4.Controls.Add(Me.LightCut)
@@ -223,10 +241,21 @@ Partial Class Form1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Cut Type"
         '
+        'NoCut
+        '
+        Me.NoCut.AutoSize = True
+        Me.NoCut.Location = New System.Drawing.Point(6, 25)
+        Me.NoCut.Name = "NoCut"
+        Me.NoCut.Size = New System.Drawing.Size(76, 24)
+        Me.NoCut.TabIndex = 3
+        Me.NoCut.TabStop = True
+        Me.NoCut.Text = "No Cut"
+        Me.NoCut.UseVisualStyleBackColor = True
+        '
         'HeavyCut
         '
         Me.HeavyCut.AutoSize = True
-        Me.HeavyCut.Location = New System.Drawing.Point(6, 82)
+        Me.HeavyCut.Location = New System.Drawing.Point(6, 90)
         Me.HeavyCut.Name = "HeavyCut"
         Me.HeavyCut.Size = New System.Drawing.Size(71, 24)
         Me.HeavyCut.TabIndex = 2
@@ -237,7 +266,7 @@ Partial Class Form1
         'MediumCut
         '
         Me.MediumCut.AutoSize = True
-        Me.MediumCut.Location = New System.Drawing.Point(6, 52)
+        Me.MediumCut.Location = New System.Drawing.Point(6, 69)
         Me.MediumCut.Name = "MediumCut"
         Me.MediumCut.Size = New System.Drawing.Size(85, 24)
         Me.MediumCut.TabIndex = 1
@@ -248,7 +277,7 @@ Partial Class Form1
         'LightCut
         '
         Me.LightCut.AutoSize = True
-        Me.LightCut.Location = New System.Drawing.Point(6, 23)
+        Me.LightCut.Location = New System.Drawing.Point(6, 48)
         Me.LightCut.Name = "LightCut"
         Me.LightCut.Size = New System.Drawing.Size(63, 24)
         Me.LightCut.TabIndex = 0
@@ -340,11 +369,31 @@ Partial Class Form1
         Me.RadioButton1.Text = "Electric"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
+        'PropaneCuts
+        '
+        Me.PropaneCuts.AutoSize = True
+        Me.PropaneCuts.Location = New System.Drawing.Point(6, 23)
+        Me.PropaneCuts.Name = "PropaneCuts"
+        Me.PropaneCuts.Size = New System.Drawing.Size(141, 20)
+        Me.PropaneCuts.TabIndex = 23
+        Me.PropaneCuts.Text = "Propane Blade Cuts:"
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.PropaneCuts)
+        Me.GroupBox6.Location = New System.Drawing.Point(256, 43)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(221, 113)
+        Me.GroupBox6.TabIndex = 24
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Stats"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(725, 459)
+        Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Logs)
@@ -371,6 +420,8 @@ Partial Class Form1
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -404,4 +455,8 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Noflood As RadioButton
+    Friend WithEvents NoCut As RadioButton
+    Friend WithEvents PropaneCuts As Label
+    Friend WithEvents GroupBox6 As GroupBox
 End Class

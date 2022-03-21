@@ -1,8 +1,22 @@
 ﻿Imports System.IO
 Imports System.Text
+
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Dim Propane As String
+        Dim Electric As String
+        Dim File As String
+        If My.Computer.FileSystem.FileExists("C:\ZamLogger\info.txt") Then
+            File = My.Computer.FileSystem.ReadAllText("C:\ZamLogger\info.txt")
+            Dim space As Integer = File.IndexOf(" ")
+            Propane = File.Substring(0, space)
+        Else
+            Propane = "0"
+            Electric = "0"
+            My.Computer.FileSystem.CreateDirectory("C:\ZamLogger\")
+            My.Computer.FileSystem.WriteAllText("C:\ZamLogger\info.txt", "0 0", True)
+        End If
+        PropaneCuts.Text = "Propane Blade Cuts: " + Propane
     End Sub
 
     Private Sub ApplicationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApplicationToolStripMenuItem.Click
@@ -32,6 +46,8 @@ Public Class Form1
             Flood = "Medium"
         ElseIf Me.LightFlood.Checked Then
             Flood = "Light"
+        ElseIf Me.Noflood.Checked Then
+            Flood = "none"
         Else
             MessageBox.Show("Please input all Values before Submitting")
             Stop
@@ -45,16 +61,21 @@ Public Class Form1
             Cut = "Medium"
         ElseIf Me.LightCut.Checked Then
             Cut = "Light"
+        ElseIf Me.NoCut.Checked Then
+            Cut = "None"
         Else
             MessageBox.Show("Please input all Values before Submitting")
             Stop
         End If
 
-
         My.Computer.FileSystem.WriteAllText("C:\Users\JTMcQ\Testfile1.txt", "Rink: " + Rink + " | Operator: " + Me.op.Text + " | Flood Type: " + Flood + " | Cut Type: " + Cut + Environment.NewLine, True)
 
         resetAllControls(Me)
 
+        If Not Cut.Equals("None") Then
+            If 
+
+        End If
 
     End Sub
 
@@ -149,5 +170,14 @@ Public Class Form1
             ComboBox1.Visible = False
             ComboBox2.Visible = False
         End If
+    End Sub
+
+    Private Sub ResetBladeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetBladeToolStripMenuItem.Click
+        MessageBox.Show("Which Zam would you like to reset")
+        My.Computer.FileSystem.DeleteFile("C:\ZamLogger\info.txt")
+    End Sub
+
+    Private Sub PropaneCuts_Click(sender As Object, e As EventArgs) Handles PropaneCuts.Click
+
     End Sub
 End Class
